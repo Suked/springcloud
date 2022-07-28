@@ -2,6 +2,9 @@ server:
   port: 8081 #该 Module 的端口号
 
 spring:
+  profiles:
+    active: dev
+
   # RabbitMQ配置
   rabbitmq:
     host: localhost
@@ -9,14 +12,12 @@ spring:
     username: guest
     password: guest
 
-  application:
-    name: server-provide
   # nacos
-  cloud:
-    nacos:
-      discovery:
-        server-addr: 192.168.35.48:8848
-        cluster-name: CS
+#  cloud:
+#    nacos:
+#      discovery:
+#        server-addr: localhost:80
+#        cluster-name: CS
 
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
@@ -24,6 +25,9 @@ spring:
     url: jdbc:mysql://localhost:3306/mybatis?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=Hongkong
     username: root
     password: 123456
+#    url: jdbc:mysql://192.168.182.131:3306/mybatis?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=Hongkong
+#    username: root
+#    password: kt@144535
     druid:
 #      # 主库数据源
 #      master:
@@ -77,6 +81,18 @@ spring:
           config:
             multi-statement-allow: true
 
+
+#数据库配置
+mybatis:
+  # 搜索指定包别名
+  type-aliases-package: com.sut.cloud.domain.vo
+  # 配置mapper的扫描，找到所有的mapper.xml映射文件
+  mapperLocations: classpath*:mapper/*Mapper.xml
+  # 加载全局的配置文件
+  configLocation: classpath:mybatis/mybatis-config.xml
+  # 开启驼峰命名规则
+  configuration:
+    map-underscore-to-camel-case: true
 
 # MyBatis-plus
 mybatis-plus:

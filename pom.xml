@@ -38,7 +38,11 @@
         <lombok.version>1.18.8</lombok.version>
         <mybatis-plus.version>3.4.3.4</mybatis-plus.version>
         <log4j.version>2.17.0</log4j.version>
-
+        <jupiter.version>5.8.2</jupiter.version>
+        <junit.version>4.11</junit.version>
+        <test.version>2.7.0</test.version>
+        <bootstrap.version>3.1.0</bootstrap.version>
+        <openfeign.version>3.1.0</openfeign.version>
     </properties>
 
     <dependencyManagement>
@@ -91,11 +95,37 @@
                 <version>${druid.version}</version>
             </dependency>
 
+            <!-- junit测试单元 -->
+            <dependency>
+                <groupId>org.junit.jupiter</groupId>
+                <artifactId>junit-jupiter-api</artifactId>
+                <version>${jupiter.version}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-test</artifactId>
+                <version>${test.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>${junit.version}</version>
+                <scope>test</scope>
+            </dependency>
+
             <!-- 解析客户端操作系统、浏览器等 -->
             <dependency>
                 <groupId>eu.bitwalker</groupId>
                 <artifactId>UserAgentUtils</artifactId>
                 <version>${bitwalker.version}</version>
+            </dependency>
+
+            <!-- openfeign -->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter-openfeign</artifactId>
+                <version>${openfeign.version}</version>
             </dependency>
 
             <!-- SpringBoot集成mybatis框架 -->
@@ -117,6 +147,12 @@
                 <groupId>com.github.oshi</groupId>
                 <artifactId>oshi-core</artifactId>
                 <version>${oshi.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter-bootstrap</artifactId>
+                <version>${bootstrap.version}</version>
             </dependency>
 
             <dependency>
@@ -220,25 +256,11 @@
                 <version>${hk.version}</version>
             </dependency>
 
-            <!-- 系统模块 -->
-            <dependency>
-                <groupId>org.example</groupId>
-                <artifactId>hk-system</artifactId>
-                <version>${hk.version}</version>
-            </dependency>
-
             <!-- 通用工具-->
             <dependency>
                 <groupId>org.example</groupId>
                 <artifactId>hk-common</artifactId>
                 <version>${hk.version}</version>
-            </dependency>
-
-            <!-- 日志 -->
-            <dependency>
-                <groupId>org.projectlombok</groupId>
-                <artifactId>lombok</artifactId>
-                <version>1.18.8</version>
             </dependency>
 
             <!-- mapstruct -->
@@ -247,12 +269,15 @@
                 <artifactId>mapstruct</artifactId>
                 <version>${org.mapstruct.version}</version>
             </dependency>
+
+            <!-- lombok集群 -->
             <dependency>
                 <groupId>org.projectlombok</groupId>
                 <artifactId>lombok</artifactId>
                 <version>${lombok.version}</version>
             </dependency>
 
+            <!-- MyBatis-Plus -->
             <dependency>
                 <groupId>com.baomidou</groupId>
                 <artifactId>mybatis-plus-boot-starter</artifactId>

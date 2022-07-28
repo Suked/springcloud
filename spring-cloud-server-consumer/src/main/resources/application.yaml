@@ -78,6 +78,17 @@ spring:
           config:
             multi-statement-allow: true
 
+#数据库配置
+mybatis:
+  # 搜索指定包别名
+  type-aliases-package: com.sut.cloud.domain.vo
+  # 配置mapper的扫描，找到所有的mapper.xml映射文件
+  mapperLocations: classpath*:mapper/*Mapper.xml
+  # 加载全局的配置文件
+  configLocation: classpath:mybatis/mybatis-config.xml
+  # 开启驼峰命名规则
+  configuration:
+    map-underscore-to-camel-case: true
 
   # MyBatis-plus
   mybatis-plus:

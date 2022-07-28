@@ -4,12 +4,12 @@ server:
 # nacos配置
 spring:
   application:
-    name: server-provide # 服务名称
+    name: server-common # 服务名称
   cloud:
     nacos:
       discovery:
         server-addr: localhost:8848
-        cluster-name: common # 集群名称
+#        cluster-name: common # 集群名称
 
   # RabbitMQ配置
   rabbitmq:

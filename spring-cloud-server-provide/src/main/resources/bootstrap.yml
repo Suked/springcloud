@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: serverprovide # 服务名
+  cloud:
+    nacos:
+      config:
+        file-extension: yaml # 后缀名
+        server-addr: localhost:80
+
+    # nacos2.x 以上用不用8848端口会报错
+      server-addr: 192.168.35.48:8848
