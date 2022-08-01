@@ -37,12 +37,12 @@ public class UserController {
     }
 
     @GetMapping("/qry/{id}")
-    public AjaxResult findById(@PathVariable("id")Long id){
+    public User findById(@PathVariable("id")Long id){
         User user = userService.findById(id);
         if (null == user){
-            return AjaxResult.error("id不存在");
+            return null;
         }
-        return AjaxResult.success(user);
+        return user;
     }
 
 }

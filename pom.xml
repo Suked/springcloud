@@ -12,6 +12,7 @@
         <module>spring-cloud-server-common</module>
         <module>spring-cloud-server-provide</module>
         <module>spring-cloud-server-consumer</module>
+        <module>gateway</module>
     </modules>
 
     <properties>
@@ -126,6 +127,13 @@
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-starter-openfeign</artifactId>
                 <version>${openfeign.version}</version>
+            </dependency>
+
+            <!-- 引入HttpClient依赖 -->
+            <dependency>
+                <groupId>io.github.openfeign</groupId>
+                <artifactId>feign-httpclient</artifactId>
+                <version>11.3</version>
             </dependency>
 
             <!-- SpringBoot集成mybatis框架 -->
